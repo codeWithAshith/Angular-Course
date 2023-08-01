@@ -6,12 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'Angular Course';
-  value = 'Value';
-
-  ouput = '';
-
-  getValue(op: string) {
-    this.ouput = op;
-  }
+  courses = [];
 }

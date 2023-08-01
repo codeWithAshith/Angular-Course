@@ -1,5 +1,8 @@
 <h1>Angular Course</h1>
-<!-- <app-course></app-course> -->
-<app-favorite [usingAlias]="value" (getNewValue)="getValue($event)" />
 
-<p>{{ ouput }}</p>
+<div *ngIf="courses.length > 0">
+  <p>List of Courses</p>
+</div>
+<div>
+  <p>No Courses yet!</p>
+</div>
