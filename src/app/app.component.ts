@@ -6,9 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  viewMode = 'map';
+  courses = ['Course 1', 'Course 2'];
 
-  onClick(mode: string) {
-    this.viewMode = mode;
+  onAdd() {
+    this.courses.push(`Course ${this.courses.length + 1}`);
+  }
+
+  onRemove(index: number) {
+    this.courses.splice(index, 1);
   }
 }
