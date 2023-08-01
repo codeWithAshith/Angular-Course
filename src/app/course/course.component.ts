@@ -8,6 +8,7 @@ import { CourseService } from '../course.service';
 })
 export class CourseComponent {
   title = 'Courses Component';
+  imageUrl = 'https://picsum.photos/200/300';
   courses;
 
   constructor(courseService: CourseService) {
