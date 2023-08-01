@@ -14,4 +14,6 @@ export class CourseComponent {
     price: 212.43,
     releaseDate: new Date(2022, 3, 3),
   };
+  lorem =
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil aliquam quia natus possimus mollitia modi vero harum suscipit soluta laudantium.';
 }

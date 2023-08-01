@@ -5,9 +5,10 @@ import { AppComponent } from './app.component';
 import { CourseComponent } from './course/course.component';
 import { CourseService } from './course.service';
 import { FormsModule } from '@angular/forms';
+import { SummaryPipe } from './summary.pipe';
 
 @NgModule({
-  declarations: [AppComponent, CourseComponent],
+  declarations: [AppComponent, CourseComponent, SummaryPipe],
   imports: [BrowserModule, FormsModule],
   providers: [CourseService],
   bootstrap: [AppComponent],
