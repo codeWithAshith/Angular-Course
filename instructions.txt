@@ -4,3 +4,5 @@ npm install -g @angular/cli
 ng new <projectName>
 ng generate component <componentName>
 ng g s <serviceName>
+
+npm install bootstrap
