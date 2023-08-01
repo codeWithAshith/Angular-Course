@@ -6,3 +6,4 @@ ng generate component <componentName>
 ng g s <serviceName>
 
 npm install bootstrap
+npm i bootstrap-icons

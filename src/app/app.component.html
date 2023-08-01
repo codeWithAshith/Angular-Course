@@ -1,12 +1,7 @@
 <h1>Angular Course</h1>
 
-<br />
-
-<button class="btn btn-primary mx-2" (click)="onAdd()">Add</button>
-
-<ul>
-  <li *ngFor="let course of courses; index as i">
-    {{ i }} - {{ course }}
-    <button class="btn btn-outline-danger m-2" (click)="onRemove(i)">Remove</button>
-  </li>
-</ul>
+<i
+  class="bi h1 mx-2"
+  [ngClass]="{ 'bi-star': isSelected, 'bi-star-fill': !isSelected }"
+  (click)="onClick()"
+></i>
