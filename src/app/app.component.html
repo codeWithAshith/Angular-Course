@@ -1,3 +1,5 @@
 <h1>Angular Course</h1>
 <!-- <app-course></app-course> -->
-<app-favorite [usingAlias]="value" />
+<app-favorite [usingAlias]="value" (getNewValue)="getValue($event)" />
+
+<p>{{ ouput }}</p>

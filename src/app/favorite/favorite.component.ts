@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-favorite',
@@ -6,14 +6,15 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./favorite.component.css'],
 })
 export class FavoriteComponent implements OnInit {
-  @Input("usingAlias") passedValue?: string;
+  @Input('usingAlias') passedValue?: string;
+  @Output() getNewValue = new EventEmitter();
 
   constructor() {}
 
   ngOnInit(): void {}
 
   onClick() {
-    console.log('cliekc');
     this.passedValue = 'New Value';
+    this.getNewValue.emit(this.passedValue);
   }
 }
