@@ -7,18 +7,11 @@ import { CourseService } from '../course.service';
   styleUrls: ['./course.component.css'],
 })
 export class CourseComponent {
-  title = 'Courses Component';
-  imageUrl = 'https://picsum.photos/200/300';
-  courses;
-
-  email = 'a@gmail.com';
-
-  constructor(courseService: CourseService) {
-    this.courses = courseService.getCourses();
-  }
-
-  onSave() {
-    console.log('Button clicked');
-    console.log(this.email);
-  }
+  course = {
+    title: 'Angular Coursr',
+    rating: 4.9642,
+    students: 40232,
+    price: 212.43,
+    releaseDate: new Date(2022, 3, 3),
+  };
 }
