@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./favorite.component.css'],
 })
 export class FavoriteComponent implements OnInit {
-  @Input() passedValue?: string;
+  @Input("usingAlias") passedValue?: string;
 
   constructor() {}
 
