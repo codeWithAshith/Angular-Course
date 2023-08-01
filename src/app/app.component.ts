@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  courses = [];
+  viewMode = 'map';
+
+  onClick(mode: string) {
+    this.viewMode = mode;
+  }
 }
