@@ -7,9 +7,10 @@ import { CourseService } from './course.service';
 import { FormsModule } from '@angular/forms';
 import { SummaryPipe } from './summary.pipe';
 import { FavoriteComponent } from './favorite/favorite.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 @NgModule({
-  declarations: [AppComponent, CourseComponent, SummaryPipe, FavoriteComponent],
+  declarations: [AppComponent, CourseComponent, SummaryPipe, FavoriteComponent, ContactFormComponent],
   imports: [BrowserModule, FormsModule],
   providers: [CourseService],
   bootstrap: [AppComponent],
