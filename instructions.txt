@@ -1,0 +1,5 @@
+npm install -g typescript
+npm install -g @angular/cli
+
+ng new <projectName>
+ng generate component <componentName>
