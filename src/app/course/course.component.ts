@@ -14,4 +14,8 @@ export class CourseComponent {
   constructor(courseService: CourseService) {
     this.courses = courseService.getCourses();
   }
+
+  onSave() {
+    console.log('Button clicked');
+  }
 }
