@@ -11,7 +11,7 @@ import { FavoriteComponent } from './components/favorite/favorite.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { SignupFormComponent } from './components/signup-form/signup-form.component';
 import { TodosComponent } from './components/todos/todos.component';
-import { HttpPostComponent } from './http-post/http-post.component';
+import { HttpPostComponent } from './components/http-post/http-post.component';
 
 @NgModule({
   declarations: [

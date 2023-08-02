@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { PostService } from '../services/post.service';
+import { PostService } from '../../services/post.service';
+import { Post } from 'src/app/interfaces/post.interface';
 
 @Component({
   selector: 'app-http-post',
@@ -17,6 +18,14 @@ export class HttpPostComponent {
     });
   }
 
-  addPost(post: HTMLInputElement) {}
+  addPost(input: HTMLInputElement) {
+    const post: Post = { title: input.value };
+
+    this.postService.createPost(post).subscribe((response) => {
+      console.log(response);
+      post.id = (response as Post)?.id;
+      this.posts.push(post);
+    });
+  }
   removePost(post: HTMLInputElement) {}
 }
