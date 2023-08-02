@@ -12,7 +12,8 @@ export class ContactFormComponent {
     { id: 2, name: 'course 2' },
     { id: 3, name: 'course 3' },
   ];
+  
   onSubmit(form: NgForm) {
-    console.log(form);
+    console.log(form.value);
   }
 }
