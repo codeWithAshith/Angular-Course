@@ -2,14 +2,15 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { CourseComponent } from './course/course.component';
-import { CourseService } from './course.service';
+import { CourseComponent } from './components/course/course.component';
+import { CourseService } from './services/course.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SummaryPipe } from './summary.pipe';
-import { FavoriteComponent } from './favorite/favorite.component';
-import { ContactFormComponent } from './contact-form/contact-form.component';
-import { SignupFormComponent } from './signup-form/signup-form.component';
-import { TodosComponent } from './todos/todos.component';
+import { SummaryPipe } from './pipes/summary.pipe';
+import { FavoriteComponent } from './components/favorite/favorite.component';
+import { ContactFormComponent } from './components/contact-form/contact-form.component';
+import { SignupFormComponent } from './components/signup-form/signup-form.component';
+import { TodosComponent } from './components/todos/todos.component';
+import { HttpPostComponent } from './http-post/http-post.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { TodosComponent } from './todos/todos.component';
     ContactFormComponent,
     SignupFormComponent,
     TodosComponent,
+    HttpPostComponent,
   ],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule],
   providers: [CourseService],

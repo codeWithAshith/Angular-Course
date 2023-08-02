@@ -1,0 +1,24 @@
+<div class="m-5">
+  <form>
+    <div class="mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Add Todo"
+        #post
+        (keyup.enter)="addPost(post)"
+      />
+    </div>
+  </form>
+
+  <ul class="list-group">
+    <li
+      *ngFor="let post of posts"
+      class="list-group-item d-flex justify-content-between"
+      (click)="removePost(post)"
+    >
+      {{ post.title }}
+      <button class="btn btn-outline-danger">Delete</button>
+    </li>
+  </ul>
+</div>
