@@ -1,21 +1,32 @@
 <form class="m-5">
+  <!-- To get value for validation #name="ngModel" -->
   <div class="mb-3">
     <label for="name" class="form-label">Name</label>
     <input
       type="text"
       class="form-control"
       name="name"
-      placeholder="First Name"
+      ngModel
+      #name="ngModel"
+      required
+      minlength="3"
+      [ngClass]="{
+        'is-invalid': name.invalid && name.touched
+      }"
     />
-  </div>
-  <div class="mb-3">
-    <label for="comment" class="form-label">Comment</label>
-    <textarea
-      class="form-control"
-      name="comment"
-      rows="3"
-      placeholder="Comment"
-    ></textarea>
+
+    <div *ngIf="name.touched && name.invalid" class="invalid-feedback">
+      <div *ngIf="name.errors?.['required']">Name is required</div>
+      <div *ngIf="name.errors?.['minlength']">Please provide a valid Name</div>
+    </div>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
+<!-- Note that from Angular v13, it changed a bit from an old code like this: -->
+
+<!-- <div *ngIf="firstName.errors?.required">First Name is required</div> -->
+
+<!-- to this -->
+
+<!-- <div? *ngIf="firstName.errors?.['requir  ed']">First Name is required</div? -->
