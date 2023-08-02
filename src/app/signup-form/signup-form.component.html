@@ -1,12 +1,41 @@
 <form class="m-5" [formGroup]="form">
   <div class="mb-3">
     <label class="form-label">Username</label>
-    <input type="text" class="form-control" formControlName="username" />
+    <input
+      type="text"
+      class="form-control"
+      formControlName="username"
+      [ngClass]="{
+        'is-invalid': username?.invalid && username?.touched
+      }"
+    />
+    <div
+      *ngIf="username?.touched && username?.invalid"
+      class="invalid-feedback"
+    >
+      <div *ngIf="username?.errors?.['required']">Name is required</div>
+      <div *ngIf="username?.errors?.['minlength']">
+        Please provide a valid Name
+      </div>
+    </div>
   </div>
 
   <div class="mb-3">
     <label class="form-label">Password</label>
-    <input type="password" class="form-control" formControlName="username" />
+    <input
+      type="password"
+      class="form-control"
+      formControlName="password"
+      [ngClass]="{
+        'is-invalid': password?.invalid && password?.touched
+      }"
+    />
+    <div
+      *ngIf="password?.touched && password?.invalid"
+      class="invalid-feedback"
+    >
+      <div *ngIf="password?.errors?.['required']">Password is required</div>
+    </div>
   </div>
 
   <button type="submit" class="btn btn-primary">Submit</button>
