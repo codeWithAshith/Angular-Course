@@ -9,6 +9,7 @@ import { Post } from 'src/app/interfaces/post.interface';
 })
 export class HttpPostComponent {
   posts: any = [];
+  title = '';
 
   constructor(private postService: PostService) {}
 
@@ -18,14 +19,25 @@ export class HttpPostComponent {
     });
   }
 
-  addPost(input: HTMLInputElement) {
-    const post: Post = { title: input.value };
+  addPost() {
+    const post: Post = { title: this.title };
 
     this.postService.createPost(post).subscribe((response) => {
-      console.log(response);
       post.id = (response as Post)?.id;
       this.posts.push(post);
+      this.title = '';
     });
   }
-  removePost(post: HTMLInputElement) {}
+
+  editPost(post: Post) {
+    this.postService.updatePost(post).subscribe((response) => {
+      console.log('edited');
+    });
+  }
+
+  removePost(post: Post) {
+    this.postService.deletePost(post).subscribe((_response) => {
+      this.posts = this.posts.filter((p: Post) => p.id !== post.id);
+    });
+  }
 }

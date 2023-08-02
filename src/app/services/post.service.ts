@@ -17,4 +17,12 @@ export class PostService {
   createPost(post: Post) {
     return this.http.post(this.url, JSON.stringify(post));
   }
+
+  updatePost(post: Post) {
+    return this.http.put(this.url + '/' + post.id, JSON.stringify(post));
+  }
+
+  deletePost(post: Post) {
+    return this.http.delete(this.url + '/' + post.id);
+  }
 }
