@@ -1,0 +1,23 @@
+<div class="m-5">
+  <form>
+    <div class="mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Add Todo"
+        #todo
+        (keyup.enter)="addTodo(todo)"
+      />
+    </div>
+  </form>
+
+  <ul class="list-group">
+    <li
+      *ngFor="let todo of todos.controls; index as index"
+      class="list-group-item"
+      (click)="removeTodo(index)"
+    >
+      {{ todo.value }}
+    </li>
+  </ul>
+</div>

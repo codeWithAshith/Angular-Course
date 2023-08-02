@@ -9,6 +9,7 @@ import { SummaryPipe } from './summary.pipe';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
+import { TodosComponent } from './todos/todos.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
     FavoriteComponent,
     ContactFormComponent,
     SignupFormComponent,
+    TodosComponent,
   ],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule],
   providers: [CourseService],
