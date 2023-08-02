@@ -20,7 +20,9 @@
       <div *ngIf="name.errors?.['minlength']">Please provide a valid Name</div>
     </div>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary" [disabled]="!form.valid">
+    Submit
+  </button>
 </form>
 
 <!-- Note that from Angular v13, it changed a bit from an old code like this: -->
