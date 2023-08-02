@@ -24,4 +24,8 @@ export class SignupFormComponent {
   get password() {
     return this.form.get('password');
   }
+
+  login() {
+    console.log(this.form.value);
+  }
 }

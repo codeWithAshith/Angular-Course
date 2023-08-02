@@ -6,8 +6,6 @@ export class UsernameValidators {
   ): Promise<ValidationErrors | null> {
     return new Promise((resolve, _reject) => {
       setTimeout(() => {
-        console.log(control.value);
-        console.log(control.value === 'code');
         if (control.value === 'code') resolve({ shouldBeUnique: true });
         else resolve({ shouldBeUnique: false });
       }, 2000);
