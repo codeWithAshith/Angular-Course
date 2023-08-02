@@ -8,9 +8,17 @@ import { FormsModule } from '@angular/forms';
 import { SummaryPipe } from './summary.pipe';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { SignupFormComponent } from './signup-form/signup-form.component';
 
 @NgModule({
-  declarations: [AppComponent, CourseComponent, SummaryPipe, FavoriteComponent, ContactFormComponent],
+  declarations: [
+    AppComponent,
+    CourseComponent,
+    SummaryPipe,
+    FavoriteComponent,
+    ContactFormComponent,
+    SignupFormComponent,
+  ],
   imports: [BrowserModule, FormsModule],
   providers: [CourseService],
   bootstrap: [AppComponent],
