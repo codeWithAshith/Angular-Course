@@ -1,1 +1,20 @@
-<p>users works!</p>
+<div class="list-group my-3" *ngFor="let user of users">
+  <a
+    href="#"
+    class="list-group-item list-group-item-action"
+    aria-current="true"
+  >
+    <div class="d-flex w-100 justify-content-between">
+      <div class="d-flex flex-column my-2">
+        <h5 class="mb-1">{{ user.name }}</h5>
+        <p class="mb-1">Email: {{ user.email }}</p>
+        <small>username: {{ user.username }}</small>
+      </div>
+      <div class="d-flex flex-column my-2">
+        <small>Street: {{ user.address.street }}</small>
+        <small>City: {{ user.address.city }}</small>
+        <small>Zipcode: {{ user.address.zipcode }}</small>
+      </div>
+    </div>
+  </a>
+</div>
