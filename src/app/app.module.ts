@@ -13,6 +13,12 @@ import { SignupFormComponent } from './components/signup-form/signup-form.compon
 import { TodosComponent } from './components/todos/todos.component';
 import { HttpPostComponent } from './components/http-post/http-post.component';
 import { AppErrorHandler } from './common/appError.handler';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { UsersComponent } from './components/users/users.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { RouterModule } from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +30,36 @@ import { AppErrorHandler } from './common/appError.handler';
     SignupFormComponent,
     TodosComponent,
     HttpPostComponent,
+    NotFoundComponent,
+    UsersComponent,
+    NavbarComponent,
+    HomeComponent,
+    UserDetailsComponent,
   ],
-  imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    RouterModule.forRoot([
+      {
+        path: '',
+        component: HomeComponent,
+      },
+      {
+        path: 'users/:userId',
+        component: UserDetailsComponent,
+      },
+      {
+        path: 'users',
+        component: UsersComponent,
+      },
+      {
+        path: 'post',
+        component: HttpPostComponent,
+      },
+    ]),
+  ],
   providers: [
     CourseService,
     { provide: ErrorHandler, useClass: AppErrorHandler },
