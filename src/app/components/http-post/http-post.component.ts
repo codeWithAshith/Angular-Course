@@ -18,12 +18,17 @@ export class HttpPostComponent {
       (response) => {
         this.posts = response;
       },
-      (error) => {
-        // handle unexpected error such as
-        // 1. Server is offline
-        // 2. Network is down
-        // 3. Unhandled exceptions
-        console.log(error);
+      (error: Response) => {
+        // handle expected error such as
+        // 1. Not found
+        // 2. Bad request
+        if (error.status === 404) {
+          console.log('Handling expected errors');
+          console.log(error);
+        } else {
+          console.log('Handling unexpected errors');
+          console.log(error);
+        }
       }
     );
   }
