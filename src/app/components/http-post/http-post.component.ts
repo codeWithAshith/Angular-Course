@@ -14,9 +14,18 @@ export class HttpPostComponent {
   constructor(private postService: PostService) {}
 
   ngOnInit() {
-    this.postService.getPost().subscribe((response) => {
-      this.posts = response;
-    });
+    this.postService.getPost().subscribe(
+      (response) => {
+        this.posts = response;
+      },
+      (error) => {
+        // handle unexpected error such as
+        // 1. Server is offline
+        // 2. Network is down
+        // 3. Unhandled exceptions
+        console.log(error);
+      }
+    );
   }
 
   addPost() {
