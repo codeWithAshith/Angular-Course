@@ -14,23 +14,9 @@ export class HttpPostComponent {
   constructor(private postService: PostService) {}
 
   ngOnInit() {
-    this.postService.getPost().subscribe(
-      (response) => {
-        this.posts = response;
-      },
-      (error: Response) => {
-        // handle expected error such as
-        // 1. Not found
-        // 2. Bad request
-        if (error.status === 404) {
-          console.log('Handling expected errors');
-          console.log(error);
-        } else {
-          console.log('Handling unexpected errors');
-          console.log(error);
-        }
-      }
-    );
+    this.postService.getPost().subscribe((response) => {
+      this.posts = response;
+    });
   }
 
   addPost() {
