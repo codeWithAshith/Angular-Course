@@ -58,6 +58,14 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
         path: 'post',
         component: HttpPostComponent,
       },
+      {
+        path: 'notFound',
+        component: NotFoundComponent,
+      },
+      {
+        path: '**',
+        component: NotFoundComponent,
+      },
     ]),
   ],
   providers: [

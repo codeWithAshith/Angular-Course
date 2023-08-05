@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-details',
@@ -8,11 +8,15 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class UserDetailsComponent {
   id: any = 0;
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
     this.route.paramMap.subscribe((params) => {
       this.id = params.get('userId');
     });
+  }
+
+  navigate() {
+    this.router.navigate(['/notFound']);
   }
 }
