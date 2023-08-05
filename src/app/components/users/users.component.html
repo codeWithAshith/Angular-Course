@@ -1,6 +1,6 @@
 <div class="list-group my-3" *ngFor="let user of users">
   <a
-    href="#"
+    [routerLink]="['/users', user.id]"
     class="list-group-item list-group-item-action"
     aria-current="true"
   >
