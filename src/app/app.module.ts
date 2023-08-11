@@ -9,7 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SummaryPipe } from './pipes/summary.pipe';
 import { FavoriteComponent } from './components/favorite/favorite.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
-import { SignupFormComponent } from './components/signup-form/signup-form.component';
+import { SigninFormComponent } from './components/signin-form/signin-form.component';
 import { TodosComponent } from './components/todos/todos.component';
 import { HttpPostComponent } from './components/http-post/http-post.component';
 import { AppErrorHandler } from './common/appError.handler';
@@ -27,7 +27,7 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
     SummaryPipe,
     FavoriteComponent,
     ContactFormComponent,
-    SignupFormComponent,
+    SigninFormComponent,
     TodosComponent,
     HttpPostComponent,
     NotFoundComponent,
@@ -42,6 +42,10 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot([
+      {
+        path: 'login',
+        component: SigninFormComponent,
+      },
       {
         path: '',
         component: HomeComponent,
