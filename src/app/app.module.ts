@@ -19,6 +19,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
+import { AuthGaurdService } from './services/auth-gaurd.service';
 
 @NgModule({
   declarations: [
@@ -49,18 +50,22 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
       {
         path: '',
         component: HomeComponent,
+        canActivate: [AuthGaurdService],
       },
       {
         path: 'users/:userId',
         component: UserDetailsComponent,
+        canActivate: [AuthGaurdService],
       },
       {
         path: 'users',
         component: UsersComponent,
+        canActivate: [AuthGaurdService],
       },
       {
         path: 'post',
         component: HttpPostComponent,
+        canActivate: [AuthGaurdService],
       },
       {
         path: 'notFound',
