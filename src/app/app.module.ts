@@ -74,7 +74,7 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
   ],
   providers: [
     CourseService,
-    { provide: ErrorHandler, useClass: AppErrorHandler },
+    // { provide: ErrorHandler, useClass: AppErrorHandler },
   ],
   bootstrap: [AppComponent],
 })

@@ -14,3 +14,8 @@ export interface User {
   phone: string;
   website: string;
 }
+
+export interface logInUser {
+  username: string;
+  password: string;
+}

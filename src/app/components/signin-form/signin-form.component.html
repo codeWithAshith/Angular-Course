@@ -44,6 +44,7 @@
       <div *ngIf="password?.errors?.['required']">Password is required</div>
     </div>
   </div>
+  <div class="text-danger mb-2" *ngIf="errorMessage">{{ errorMessage }}</div>
 
   <button
     type="submit"

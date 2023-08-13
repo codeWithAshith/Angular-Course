@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UsernameValidators } from './username.validators';
+import { AuthService } from 'src/app/services/auth.service';
+import { logInUser } from 'src/app/interfaces/user.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signin-form',
@@ -8,6 +11,7 @@ import { UsernameValidators } from './username.validators';
   styleUrls: ['./signin-form.component.css'],
 })
 export class SigninFormComponent {
+  errorMessage: string = '';
   form = new FormGroup({
     username: new FormControl(
       '',
@@ -16,6 +20,8 @@ export class SigninFormComponent {
     ),
     password: new FormControl('', [Validators.required]),
   });
+
+  constructor(private authService: AuthService, private router: Router) {}
 
   get username() {
     return this.form.get('username');
@@ -27,5 +33,20 @@ export class SigninFormComponent {
 
   login() {
     console.log(this.form.value);
+    let user: logInUser = {
+      username: this.form.value.username!,
+      password: this.form.value.password!,
+    };
+
+    this.authService.login(user).subscribe(
+      (response) => {
+        console.log(response);
+        this.router.navigate(['/']);
+      },
+      (error) => {
+        console.log(error);
+        this.errorMessage = 'Invalid Credentails';
+      }
+    );
   }
 }
